@@ -1,12 +1,13 @@
 return {
-	"metalelf0/black-metal-theme-neovim",
+	"catppuccin/nvim",
 	lazy = false,
+	name = "catppuccin",
 	priority = 1000,
 	config = function()
-		require("black-metal").setup({
-			theme = "immortal",
-			-- optional configuration here
+		require("catppuccin").setup({
+			flavour = "mocha",
 		})
-		require("black-metal").load()
+
+		vim.cmd.colorscheme("catppuccin")
 	end,
 }
