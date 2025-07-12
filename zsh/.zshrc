@@ -1,6 +1,25 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# ========== Zsh Environment Setup ==========
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PNPM_HOME="/home/roniel/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+export PATH="/home/roniel/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/roniel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+source "$HOME/.cargo/env"
+# ===========================================
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
